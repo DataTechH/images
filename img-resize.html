@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>test</title>
+		<style type="text/css">
+
+		#myImage{
+			height: 100%;
+			max-width: 620px;
+		}
+		.holderImage{
+			height: 350px;
+			position: relative;
+		}
+		</style>
+		<script type="text/javascript">
+		  var imgUrl;
+		  function fn(){
+			  imgUrl = window.location.search.replace( "?", "" );
+			  imgUrl = imgUrl.replace("img=","");
+			  document.getElementById('myImage').src = imgUrl
+		  }
+		</script>
+	</head>
+	
+	<body onload="fn()" class="noscroll">
+	<div class="holderImage">
+		<img src='<%= request.getParameter("img") %>' id="myImage" alt="Click to open image in new window" />
+	</div> 
+	</body>
+</html>
